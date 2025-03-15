@@ -6,7 +6,7 @@ import requests
 def classify_text(text):
    API_URL="https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
    headers={"Authorization":f"Bearer {HF_API_KEY}"}
-   payload={"inputs:text"}
+   payload={"inputs":text}
    response=requests.post(API_URL,headers=headers,json=payload)
    return response.json()
 
